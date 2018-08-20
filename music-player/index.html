@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>music-player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./font-icon/iconfont.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="top">
+            <i class="iconfont icon-fanhui" id="back">
+
+            </i>
+            <b>大标题</b>
+            <i class="iconfont icon-dingdan" id="menu">
+
+            </i>
+        </div>
+        <div class="Img">
+            <div class="img" id="animate">
+
+            </div>
+
+        </div>
+        <div class="rc">
+            <p>
+                <b>歌曲标题</b>
+            </p>
+            歌词
+
+        </div>
+        <div class="range top font-time">
+            <div class="left">   00:00 </div>
+            <div class="center">
+                    <div class="process">
+                            <div class="rank"></div>
+                    </div>
+                    
+            </div>
+            
+            <div class="right">  00:00  </div>
+        </div>
+        <div class="icon">
+            <i class="iconfont icon-shangyishou" id="last"></i>
+            <i class="iconfont icon-bofang" id="play-btn"></i>
+            <i class="iconfont icon-kuaijin" id="past"></i>
+        </div>
+    </div>
+    <div id="player">
+        <audio id="id-music-player" controls>
+            <source src="kll.mp3" data-index="0" type="">
+            <source src="" type="">
+        </audio>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

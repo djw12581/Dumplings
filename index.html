@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>music-player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./font-icon/iconfont.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="top">
+            <i class="iconfont icon-fanhui" id="back">
+
+            </i>
+            <b>大标题</b>
+            <i class="iconfont icon-dingdan" id="menu">
+
+            </i>
+        </div>
+        <div class="Img">
+            <div class="img" id="animate">
+
+            </div>
+
+        </div>
+        <div class="rc">
+            <p>
+                <b>歌曲标题</b>
+            </p>
+            歌词
+
+        </div>
+        <div class="range top font-time">
+            <div class="left"> 00:00 </div>
+            <div class="center">
+                <div class="process">
+                    <div class="rank"></div>
+                </div>
+
+            </div>
+
+            <div class="right"> 00:00 </div>
+        </div>
+        <div class="icon">
+            <i class="iconfont icon-shangyishou" id="last"></i>
+            <i class="iconfont icon-bofang" id="play-btn"></i>
+            <i class="iconfont icon-kuaijin" id="past"></i>
+        </div>
+    </div>
+    
+    <div id="player">
+        <audio id="id-music-player" >
+            <source src="" data-index="0" type="">
+            <source src="" type="">
+        </audio>
+    </div>
+
+    <div id="insert" class="insert"><ul></ul></div>
+    <div class="full">
+        <div class="flex-center">
+              <form>
+                  <div class="custom-file">
+                      <input type="file" class="custom-file-input" id="customFile">
+                      <label class="custom-file-label" for="customFile">添加歌曲</label>
+                  </div>
+              </form>
+              <ul>
+              </ul>
+              <a  class="text-center ">back</a>
+              </div>
+          </div>
+
+    <script src="index.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

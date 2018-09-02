@@ -31,6 +31,12 @@ var g = {
   song: []
 }
 
+// 字符串切割函数
+var cut = function (str, char, number) {
+  var s = str.split(char)
+  return s[number]
+  }
+
 // 播放结束删除操作
 var removeAction = function (selector, className1, className2) {
   e(selector).classList.add(className2);
@@ -161,12 +167,18 @@ var load = function () {
   })
   // 播放列表点击动态添加歌曲链接
   bindEvent('#insert ul', 'click', function () {
-    var target = event.target;
+    var target = event.target
     // 找到自定义属性作为下标
-    var index = target.dataset.song;
+    var index = target.dataset.song
     // 获取当前播放链接
     // 改变链接
-    gua.src = g.songUrl[index];
+    gua.src = g.songUrl[index]
+    // 添加歌曲名
+    var s = g.song[index]
+    var str = cut(s, '.', 0)
+    // 找到标题元素 重写值
+    // log('切割后的字符串', str)
+    e('.top b').innerHTML = str
     // 重载
     gua.load();
     stopAction();

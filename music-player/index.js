@@ -47,7 +47,7 @@ var togglePlay = function (selector, className1, className2, element) {
         //删除animate
         removeAction("#animate", "animate", "animate-pause");
     }
-};
+}
 
 // 切换类（图标）
 var toggleClass = function (element, className1, className2) {
@@ -61,18 +61,19 @@ var toggleClass = function (element, className1, className2) {
         element.classList.add(className1);
         element.classList.remove(className2);
     }
-};
+}
 
 // 动画操作
 var addAction = function (selector, className1, className2) {
     e(selector).classList.add(className1);
     e(selector).classList.remove(className2);
-};
+}
 
+// 动画结束操作
 var removeAction = function (selector, className1, className2) {
     e(selector).classList.add(className2);
     e(selector).classList.remove(className1);
-};
+}
 
 // 结束时改变图标及重置状态
 var stopAction = function () {
@@ -83,48 +84,48 @@ var stopAction = function () {
     removeAction("#animate", "animate", "animate-pause");
     // // 改变自定义进度条位置
     e('.rank').style.left = ''
-};
+}
 
 // 切歌功能
 var toggleSone = function () {
 
     e("#past").addEventListener("click", function () {
         // 找到节点
-        var s = e("source");
+        var s = e("source")
         // 将自定义元素data-作为索引值操作
-        var d = ++s.dataset.index;
-        s.src = g.songUrl[d];
-        e("#id-music-player").load();
-        stopAction();
-    });
+        var d = ++s.dataset.index
+        s.src = g.songUrl[d]
+        e("#id-music-player").load()
+        stopAction()
+    })
 
     e("#last").addEventListener("click", function () {
-        var s = e("source");
-        var d = --s.dataset.index;
-        s.src = g.songUrl[d];
-        e("#id-music-player").load();
-        stopAction();
-    });
-};
-toggleSone();
+        var s = e("source")
+        var d = --s.dataset.index
+        s.src = g.songUrl[d]
+        e("#id-music-player").load()
+        stopAction()
+    })
+}
+toggleSone()
 
 
 // 播放功能
 var player = function (selector) {
 
-    var gua = e("#id-music-player");
+    var gua = e("#id-music-player")
     var btn = e("#play-btn")
     var cDiv = e('.center')
     // 监听播放结束事件
     gua.addEventListener("ended", function () {
-        stopAction();
+        stopAction()
     });
 
     gua.addEventListener("durationchange", function () {
         var half = Number(gua.currentTime).formatTime()
         var full = Number(gua.duration).formatTime()
 
-        e('.range .left').innerHTML = half;
+        e('.range .left').innerHTML = half
         e('.range .right').innerHTML = full
         log('durationchange', half, full)
     });
@@ -136,7 +137,7 @@ var player = function (selector) {
         log('timeupdate')
         // 更新当前歌曲进行时间
         var half = Number(gua.currentTime).formatTime()
-        e('.range .left').innerHTML = half;
+        e('.range .left').innerHTML = half
 
     });
 
@@ -161,7 +162,6 @@ var player = function (selector) {
         // 动态监听播放时间
         // 当播放按钮包含.icon-bofang时 停止计时
         var b = btn.classList.contains('icon-zanting')
-
 
         // 展示到页面上 #range
 
